@@ -1,9 +1,9 @@
-import './pages/menu.css';
-import './components/navbar.css';
-import Navbar from './components/navbar';
-import Bottombar from './components/bottonmbar';
-import Sidebar from './components/sidebar';
-import Poster from './pages/poster'
+import './menu.css';
+import '../components/navbar.css';
+import Navbar from '../components/navbar';
+import Bottombar from '../components/bottonmbar';
+import Sidebar from '../components/sidebar';
+import Poster from './poster'
 
 function Menu() {
 

@@ -1,5 +1,9 @@
 const mongoose = require("mongoose");
-var mongoURL = "mongodb+srv://he201883:spaces2024@spaces.eoorffo.mongodb.net/";
+const dbPassword = process.env.DB_PASSWORD;
+
+var mongoURL = 'mongodb+srv://he201883:'+ dbPassword+ '@spaces.eoorffo.mongodb.net/';
+//const mongoURL = "mongodb+srv://he201883:dbPassword@spaces.eoorffo.mongodb.net/";
+
 mongoose.connect(mongoURL, {useUnifiedTopology:true, useNewUrlParser:true})
 
 var connection = mongoose.connection

@@ -9,11 +9,12 @@ import Apropos from './pages/about';
 import Contact from './pages/contact';
 import Connexion from './pages/connexion';
 import Home from './pages/home';
+import Menu from './pages/menu'
 
 function App() {
   return (
     <div className="App">
-      <Home/>
+      <Menu/>
     </div>
   );
 }
