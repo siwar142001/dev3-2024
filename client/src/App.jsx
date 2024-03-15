@@ -13,17 +13,7 @@ import Home from './pages/home';
 function App() {
   return (
     <div className="App">
-      <header className="Spaces"></header>
-      <body>
-        <div>
-          <Navbar />
-          <h2>Bienvenue dans notre application de location d'espaces</h2>
-          <img src={monImage} alt="Description" style={{ width: '1530px', height: '500px' }}/>
-
-          <Bottombar />
-        </div>
-        
-      </body>
+      <Home/>
     </div>
   );
 }
