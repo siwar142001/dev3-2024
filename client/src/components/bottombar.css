@@ -3,7 +3,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Assurez-vous que la barre de navigation est au-dessus de tout le contenu */
+    z-index: 1000; 
   }
   
   .navbar-nav {
