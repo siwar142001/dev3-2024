@@ -10,6 +10,7 @@ import Contact from './pages/contact';
 import Connexion from './pages/connexion';
 import Home from './pages/home';
 import Menu from './pages/menu'
+import Poster from './pages/poster';
 
 function App() {
   return (
