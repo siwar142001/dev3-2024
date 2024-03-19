@@ -1,7 +1,6 @@
-// models/addspace.js
 const mongoose = require('mongoose');
 
-const spaces = mongoose.Schema({
+const spaces_schema = mongoose.Schema({
     titre: {
         type: String,
         required: true
@@ -30,8 +29,8 @@ const spaces = mongoose.Schema({
         type: Number,
         required: true
     }
-});
+}, {timestamps : true });
 
-const model_space = mongoose.model('Space', spaces);
+const model_space = mongoose.model('Spaces', spaces_schema);
 
-module.exports = model_space;
+module.exports = model_space

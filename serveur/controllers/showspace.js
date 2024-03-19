@@ -1,0 +1,1 @@
+const space_model = require("../models/showspace");
