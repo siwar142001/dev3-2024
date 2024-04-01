@@ -49,6 +49,7 @@ const create_space = async(req, res) => {
         // s'il y a une erreur dans la fonction save, on envoie status 500
         .catch(err => {
             console.log(err.name);
+            console.log(err)
 
             res.status(500).json({
                 success: false,
