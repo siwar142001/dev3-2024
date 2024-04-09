@@ -6,11 +6,12 @@ import monImage from './bg.jpg';
 import Navbar from './components/navbar';
 import Bottombar from './components/bottonmbar';
 import Accueil from './pages/Accueil';
-import Apropos from './pages/about';
+import Apropos from './pages/apropos';
 import Contact from './pages/contact';
 import Connexion from './pages/connexion';
 import Poster from './pages/poster';
 import Home from './pages/home';
+import apropos from './pages/apropos'
 
 function App() {
   const handleSubmit = (data) => {
@@ -25,7 +26,7 @@ function App() {
           <Route path='/accueil' Component={Accueil}/>
           <Route path='/connexion' Component={Connexion}/>
           <Route path='/contact' Component={Contact}/>
-          <Route path='/apropos' Component={Apropos}/>
+          <Route path='/apropos' Component={apropos}/>
           <Route path='/poster' element={<Poster onSubmit={handleSubmit} />} />
 
         </Routes>
