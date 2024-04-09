@@ -10,6 +10,12 @@ const spaces = mongoose.Schema({
         type: String,
         required: true
     },
+    proprietaire:{
+        type: String,
+        require: true
+
+    },
+
     dimension: {
         type: Number,
         required: true
@@ -29,7 +35,13 @@ const spaces = mongoose.Schema({
     prix: {
         type: Number,
         required: true
-    }
+    },
+    cathegorie:{
+        type:String,
+        require: true
+    },
+
+    imageUrl: []
 });
 
 const model_space = mongoose.model('Space', spaces);

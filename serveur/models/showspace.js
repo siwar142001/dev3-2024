@@ -28,7 +28,8 @@ const spaces_schema = mongoose.Schema({
     prix: {
         type: Number,
         required: true
-    }
+    },
+    imageUrl:[]
 }, {timestamps : true });
 
 const model_space = mongoose.model('Spaces', spaces_schema);

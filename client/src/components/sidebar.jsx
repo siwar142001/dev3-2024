@@ -7,11 +7,23 @@ function Sidebar() {
   return (
     <div className="sidebar">
       
-      <button className='sidebar-button'>Mon compte</button>
-      <button className='sidebar-button'>Mes espaces</button>
-      <button className='sidebar-button'>Historique</button>
-      <button className='sidebar-button'>Favoris</button>
-      <button className='sidebar-button'>Poster</button>      
+      <side className="sidebar">
+      
+      <ul className="sidebar-side">
+        
+        <li className="side-item">
+          <a href="Moncompte" className="side-link">Mon compte</a>
+        </li>
+        
+        <li className="side-item">
+          <a href="Favoris" className="side-link">Favoris</a>
+        </li>
+        <li className="side-item">
+          <a href="Poster" className="side-link">Poster</a>
+        </li>
+
+      </ul>
+    </side>   
     </div>
   );
 }
