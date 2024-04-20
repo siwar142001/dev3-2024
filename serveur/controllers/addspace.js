@@ -1,4 +1,4 @@
-const Space = require("../models/addspace");
+const Space = require("../models/space_model");
 
 const create_space = async (req, res) => {
 

@@ -36,12 +36,12 @@ const spaces = mongoose.Schema({
         type: Number,
         required: true
     },
-    cathegorie:{
+    categorie:{
         type:String,
         require: true
     },
 
-    imageUrl: []
+    imageUrl: [],
 });
 
 const model_space = mongoose.model('Space', spaces);

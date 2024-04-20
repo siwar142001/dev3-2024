@@ -5,7 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 function Navbar() {
   return (
-    <nav class="navbar navbar-expand-lg ">
+    <nav class="navbar navbar-expand-lg  ">
   <div class="container-fluid">
     <a class="navbar-brand" href="/home">Spaces</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,10 +14,10 @@ function Navbar() {
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/accueil">Accueil</a>
+          <a class="nav-link" aria-current="page" href="/accueil">Accueil</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/connexion">Connexion</a>
+          <a class="nav-link " href="/connexion">Connexion</a>
         </li>
         
         <li class="nav-item dropdown">
