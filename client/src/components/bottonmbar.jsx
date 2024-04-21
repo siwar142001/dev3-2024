@@ -2,14 +2,14 @@ import React from 'react';
 import './bottombar.css';
 function BottomNavbar() {
   return (
-    <nav class="navbar1 navbar-expand-lg ">
-  <div class="container-fluid">    
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/contact">Contact</a>
+    <nav className="navbar1 navbar-expand-lg ">
+  <div className="container-fluid">    
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <a className="nav-link1 active" aria-current="page" href="/contact">Contact</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/apropos">A propos</a>
+        <li className="nav-item">
+          <a className="nav-link1" href="/apropos">A propos</a>
         </li>
         
         

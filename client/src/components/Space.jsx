@@ -48,7 +48,20 @@ function Space({ space }) {
                                 </button>
                             </div>
                             <p>{space.description}</p>
-                            <p>{}</p>
+                            <div class="row g-3" id='form'>
+                                <div class="col-md-6">
+                                    <label for="inputEmail4" class="form-label">Places assises : {space.place_assise}</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Places debout : {space.place_debout}</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputEmail4" class="form-label">Ville : {space.ville}</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputPassword4" class="form-label">Prix : {space.prix}</label>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>

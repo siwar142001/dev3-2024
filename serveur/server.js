@@ -16,12 +16,16 @@ const { connect } = require('mongoose');
 
 const routeAddSpace = require('./routes/addspace'); 
 const routeShowSpace = require('./routes/showspace');
+const routeGetCities = require('./routes/getcities');
+
 
 
 //app.use(json()); // Middleware pour analyser les corps JSON
 
 app.use('/spaces', routeShowSpace)
 app.use('/spaces', routeAddSpace)
+app.use('/cities', routeGetCities)
+
 //app.post('/api/spaces', routeAddSpace);
 
 const port = process.env.PORT || 5000;
