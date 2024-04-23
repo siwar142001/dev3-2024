@@ -1,12 +1,9 @@
 
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import monImage from './bg.jpg';
-//import './components/navbar.css';
 import Navbar from './components/navbar';
 import Bottombar from './components/bottonmbar';
 import Accueil from './pages/Accueil';
-import Apropos from './pages/apropos';
 import Contact from './pages/contact';
 import Connexion from './pages/connexion';
 import Poster from './pages/poster';
@@ -33,7 +30,6 @@ function App() {
       </Router>
       <Bottombar />
 
-      {/*<Accueil/> */}
 
     
     </div>

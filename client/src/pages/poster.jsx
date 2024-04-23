@@ -13,7 +13,7 @@ function Poster({ onSubmit }) {
     const [place_debout, setplace_debout] = useState('');
     const [ville, setVille] = useState('');
     const [prix, setPrix] = useState('');
-    const [imageUrl, setImageUrl] = useState(null);
+    const [imageUrl, setImageUrl] = useState('');
     const [cities, setCities] = useState([]);
 
     // Effectuer une requête HTTP GET pour récupérer la liste des villes
@@ -34,7 +34,7 @@ function Poster({ onSubmit }) {
     }
 
     // Fonction pour gérer la soumission du formulaire
-    const submit = async (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
@@ -66,13 +66,15 @@ function Poster({ onSubmit }) {
             setVille('');
             setPrix('');
             setImageUrl('');
+            // Appel de la fonction onSubmit si elle est fournie
+            if (onSubmit) onSubmit();
         } catch (error) {
             // Gestion des erreurs
             console.error('Une erreur s\'est produite lors de l\'envoi des données :', error);
         }
     };
     return (
-        <form className="row g-3" id='form'>
+        <form className="row g-3" id='form' onSubmit={handleSubmit}>
             <div className="col-md-6">
                 <label htmlFor="inputEmail4" className="form-label">Titre</label>
                 <input type="text" className="form-control" id="inputEmail4" value={titre} onChange={(e) => setTitre(e.target.value)} required minLength={4} maxLength={15} />
@@ -97,10 +99,12 @@ function Poster({ onSubmit }) {
             <div className="col-md-4">
                 <label htmlFor="inputState" className="form-label">Cathéhgorie</label>
                 <select id="inputState" className="form-select" value={cathegorie} onChange={(e) => setCathegorie(e.target.value)} required >
-                    <option selected>Térrasse</option>
-                    <option selected>Piscine </option>
-                    <option selected>Jardin</option>
+                    <option value="Terrasse">Térrasse</option>
+                    <option value="Piscine">Piscine</option>
+                    <option value="Jardin">Jardin</option>
+                    <option value="Salle">Salle</option>
                 </select>
+
             </div>
             <div className="col-md-2">
                 <label htmlFor="inputZip" className="form-label">Place assise</label>

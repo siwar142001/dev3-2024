@@ -70,5 +70,4 @@ const create_space = async (req, res) => {
         });
 }
 
-
-module.exports = { create_space };
+module.exports = { create_space, Space };

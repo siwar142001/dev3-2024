@@ -1,7 +1,5 @@
 import React from 'react';
 import './navbar.css';
-import { FaBars } from 'react-icons/fa';
-import Dropdown from 'react-bootstrap/Dropdown';
 
 function Navbar() {
   return (
@@ -21,7 +19,7 @@ function Navbar() {
         </li>
         
         <li className="nav-item dropdown">
-          <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a className="nav-link dropdown-toggle" href="a" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Menu
           </a>
           <ul className="dropdown-menu">

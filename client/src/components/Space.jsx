@@ -24,53 +24,58 @@ function Space({ space }) {
 
             </div>
 
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">{space.titre}</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h1 className="modal-title fs-5" id="exampleModalLabel">{space.titre}</h1>
+                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
-                            <div id="carouselExample" class="carousel slide">
-                                <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img src={space.imageUrl} class="d-block w-100" height={200} width={100} />
-                                    </div>
+                        <div className="modal-body" size='lg'>
+                            <div id="carouselExample" className="carousel slide">
+                                <div className="carousel-inner">
+
+                                    {space.imageUrl.map(url => {
+                                        return <div className="carousel-item active" >
+                                            <img src={url} className='d-block w-100 bigimg' />
+                                            <button className="carousel-control-prev " type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                                                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span className="visually-hidden">Previous</span>
+                                            </button>
+                                            <button className="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                                                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span className="visually-hidden">Next</span>
+                                            </button>
+                                        </div>
+                                    })}
+
                                 </div>
-                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Previous</span>
-                                </button>
-                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="visually-hidden">Next</span>
-                                </button>
+
                             </div>
                             <p>{space.description}</p>
-                            <div class="row g-3" id='form'>
-                                <div class="col-md-6">
-                                    <label for="inputEmail4" class="form-label">Places assises : {space.place_assise}</label>
+                            <div className="row g-3" id='form'>
+                                <div className="col-md-6">
+                                    <label htmlFor="inputEmail4" className="form-label">Places assises : {space.place_assise}</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="inputPassword4" class="form-label">Places debout : {space.place_debout}</label>
+                                <div className="col-md-6">
+                                    <label htmlFor="inputPassword4" className="form-label">Places debout : {space.place_debout}</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="inputEmail4" class="form-label">Ville : {space.ville}</label>
+                                <div className="col-md-6">
+                                    <label htmlFor="inputEmail4" className="form-label">Ville : {space.ville}</label>
                                 </div>
-                                <div class="col-md-6">
-                                    <label for="inputPassword4" class="form-label">Prix : {space.prix}</label>
+                                <div className="col-md-6">
+                                    <label htmlFor="inputPassword4" className="form-label">Prix : {space.prix}</label>
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                            <button type="button" class="btn btn-primary">Reserver</button>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                            <button type="button" className="btn btn-primary">Reserver</button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     )
 }
 
