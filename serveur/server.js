@@ -14,9 +14,11 @@ app.use(cors());
 const mongoURL = process.env.MONGO_URL;
 const { connect } = require('mongoose'); 
 
+const routeAddUser = require('./routes/adduser'); 
 const routeAddSpace = require('./routes/addspace'); 
 const routeShowSpace = require('./routes/showspace');
 const routeGetCities = require('./routes/getcities');
+const routeGetCathegorie = require('./routes/categorie');
 
 
 
@@ -25,6 +27,9 @@ const routeGetCities = require('./routes/getcities');
 app.use('/spaces', routeShowSpace)
 app.use('/spaces', routeAddSpace)
 app.use('/cities', routeGetCities)
+app.use('/categories', routeGetCathegorie)
+app.use('/user', routeAddUser)
+
 
 //app.post('/api/spaces', routeAddSpace);
 

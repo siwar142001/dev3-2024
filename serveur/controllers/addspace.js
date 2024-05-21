@@ -11,7 +11,7 @@ const create_space = async (req, res) => {
             .status(400)
             .json({
                 success: false,
-                message: "tous les champs sont obligatoire"
+                message: "tous les champs sont obligatoires"
             });
     }
 
@@ -20,7 +20,7 @@ const create_space = async (req, res) => {
         description: req.body.description,
         proprietaire: req.body.proprietaire,
         dimension: req.body.dimension,
-        cathegorie: req.body.cathegorie,
+        categorie: req.body.categorie,
         place_assise: req.body.place_assise,
         place_debout: req.body.place_debout,
         ville: req.body.ville,
@@ -47,7 +47,7 @@ const create_space = async (req, res) => {
                         description: result.description,
                         proprietaire: result.proprietaire,
                         dimension: result.dimension,
-                        cathegorie: result.cathegorie,
+                        categorie: result.categorie,
                         place_assise: result.place_assise,
                         place_debout: result.place_debout,
                         ville: result.ville,

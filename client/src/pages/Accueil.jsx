@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import ReactPaginate from 'react-paginate';
+import ReactDOM from 'react-dom';
 import './Accueil.css';
 import axios from 'axios';
 import Space from '../components/Space'
+
+const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
 export const Accueil = ({ space }) => {
 
@@ -33,6 +37,30 @@ export const Accueil = ({ space }) => {
 
   return (
     <div className='container'>
+      <div className='row mt-5 bs'>
+        <div className='col-md-4'>
+          <input type="text" className='form-control' placeholder='Recherche' />
+        </div>
+        <div className='col-md-4'>
+          <select className='form-control'>
+            <option value="Prix croissant">Prix croissant</option>
+            <option value="Prix décroissant">Prix décroissant</option>
+            <option value="Dimension croissante">Dimension croissante</option>
+            <option value="Dimension Décroissante">Dimension Décroissante</option>
+            <option value="Places croissantes">Places croissantes</option>
+            <option value="Places décroissantes">Places décroissantes</option>
+
+          </select>
+        </div>
+        <div className='col-md-4'>
+          <select className='form-control' >
+          <option value="jardin">Jardin</option>
+          <option value="terrasse">Terrasse</option>
+          <option value="piscine">Piscine</option>
+          <option value="salle de reunion">Salle de réunion</option>
+          <option value="salle de fete"> Salle de fête</option>
+        </select></div>
+      </div>
       <div className="row justify-content-center mt-5">
         {loading ? (
           <h1>Loading ....</h1>

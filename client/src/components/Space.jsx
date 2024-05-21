@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Carousel } from 'react-bootstrap'
+
 import './Spaces.css'
 
 function Space({ space }) {
@@ -70,7 +70,7 @@ function Space({ space }) {
                         </div>
                         <div className="modal-footer">
                             <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                            <button type="button" className="btn btn-primary">Reserver</button>
+                            <button type="button" className="btn btn-primary"  >Reserver</button>
                         </div>
                     </div>
                 </div>

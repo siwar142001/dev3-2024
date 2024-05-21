@@ -17,6 +17,9 @@ function Navbar() {
         <li className="nav-item">
           <a className="nav-link " href="/connexion">Connexion</a>
         </li>
+        <li className="nav-item">
+          <a className="nav-link " href="/inscription">Inscription</a>
+        </li>
         
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="a" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,6 +31,7 @@ function Navbar() {
             <li><a className="dropdown-item" href="/loues">Loués</a></li>
             <li><a className="dropdown-item" href="/favoris">Favoris</a></li>
             <li><a className="dropdown-item" href="/poster">Poster</a></li>
+
 
 
           </ul>

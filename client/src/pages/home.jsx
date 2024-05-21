@@ -10,7 +10,7 @@ function App() {
       <body>
         <div>
           <h2>Bienvenue dans notre application de location d'espaces</h2>
-          <img src={monImage} alt="Description" style={{ width: '1500px', height: '490px' }}/>
+          <img className='img' src={monImage} alt="Description" style={{ width: '1500px', height: '490px' }}/>
         </div>
         
       </body>
