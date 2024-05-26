@@ -1,6 +1,6 @@
 // app.js
 require('dotenv').config();
-
+const path = require('path')
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser'); // Importer bodyParser
@@ -8,7 +8,6 @@ const bodyParser = require('body-parser'); // Importer bodyParser
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
-
 //app.use(express.json);
 
 const mongoURL = process.env.MONGO_URL;

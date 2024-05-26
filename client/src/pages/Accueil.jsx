@@ -5,13 +5,17 @@ import './Accueil.css';
 import axios from 'axios';
 import Space from '../components/Space'
 
-const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 
 export const Accueil = ({ space }) => {
 
   const [spaces, setSpaces] = useState([]);
   const [loading, setLoading] = useState();
   const [error, setError] = useState();
+  const [searchKey, setSearchKey] = useState('');
+  const [categorie, setCategorie] = useState('jardin');
+  const [duplicatespace, setDuplicateSace] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(10);
 
 
   useEffect(() => {
@@ -27,6 +31,7 @@ export const Accueil = ({ space }) => {
       dataArray = data.spaces;
       //console.log("data array" + dataArray);
       setSpaces(dataArray);
+      setDuplicateSace(dataArray);
       setLoading(false);
     } catch (error) {
       setError(true);
@@ -34,12 +39,21 @@ export const Accueil = ({ space }) => {
       setLoading(false)
     }
   }
+  function filterBySearch() {
+    const tempspaces = duplicatespace.filter(space => space.titre.toLowerCase().includes(searchKey.toLowerCase()))
+    setSpaces(tempspaces)
+  }
 
+  function filterByCategorie(e) {
+    const tempspaces = duplicatespace.filter(space =>
+      space.categorie && space.categorie.toLowerCase() === e.toLowerCase()
+    ); setSpaces(tempspaces)
+  }
   return (
     <div className='container'>
       <div className='row mt-5 bs'>
         <div className='col-md-4'>
-          <input type="text" className='form-control' placeholder='Recherche' />
+          <input type="text" className='form-control' placeholder='Recherche' value={searchKey} onChange={(e) => setSearchKey(e.target.value)} onKeyUp={filterBySearch} />
         </div>
         <div className='col-md-4'>
           <select className='form-control'>
@@ -53,19 +67,18 @@ export const Accueil = ({ space }) => {
           </select>
         </div>
         <div className='col-md-4'>
-          <select className='form-control' >
-          <option value="jardin">Jardin</option>
-          <option value="terrasse">Terrasse</option>
-          <option value="piscine">Piscine</option>
-          <option value="salle de reunion">Salle de réunion</option>
-          <option value="salle de fete"> Salle de fête</option>
-        </select></div>
+          <select className='form-control' value={categorie} onChange={(e) => { filterByCategorie(e.target.value) }}>
+            <option value="jardin">Tout</option>
+            <option value="jardin">Jardin</option>
+            <option value="terrasse">Terrasse</option>
+            <option value="piscine">Piscine</option>
+            <option value="salle de reunion">Salle de réunion</option>
+            <option value="salle de fete"> Salle de fête</option>
+          </select></div>
       </div>
       <div className="row justify-content-center mt-5">
         {loading ? (
           <h1>Loading ....</h1>
-        ) : error ? (
-          <h1>Error</h1>
         ) : (
           spaces.map((space) => {
             return <div className='col-md-9 mt-2'>
