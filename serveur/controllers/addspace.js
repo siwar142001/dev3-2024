@@ -70,4 +70,25 @@ const create_space = async (req, res) => {
         });
 }
 
-module.exports = { create_space, Space };
+const get_space_user_connected = async (req,res) =>{
+    try{
+        //6655dc635fdc46a
+        console.log(req.user)
+        const spaces  = await Space.find({proprietaire:req.user.email})
+        res.status(200).json({spaces})
+    }catch(err){
+        console.log(err)
+        res.status(500).json({msg:"Internal serveur error"})
+    }    
+}
+
+const get_all_spaces= async (req,res) =>{
+    try{
+        const spaces  = await Space.find({})
+        res.status(200).json({spaces})
+    }catch(err){
+        console.log(err)
+        res.status(500).json({msg:"Internal serveur error"})
+    }    
+}
+module.exports = { create_space, Space,get_space_user_connected ,get_all_spaces};
