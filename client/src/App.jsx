@@ -1,31 +1,41 @@
-import './App.css';
+import { RouterProvider } from 'react-router-dom';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import monImage from './bg.jpg'; 
-import './components/navbar.css';
-import Navbar from './components/navbar';
-import Bottombar from './components/bottonmbar';
-import Accueil from './pages/Accueil';
-import Apropos from './pages/about';
-import Contact from './pages/contact';
-import Connexion from './pages/connexion';
-import Home from './pages/home';
+import Accueil from './page/Accueil.jsx';
+import Contact from './page/contact.jsx';
+import Connexion from './page/connexion.jsx';
+import Poster from './page/poster.jsx';
+import Home from './page/home.jsx';
+import apropos from './page/apropos.jsx';
+import signup from './page/signup.jsx';
+import Notifications from './page/notifications.jsx';
+import SpacesForOwner from './page/SpaceForOwner.jsx';
+import 'devextreme/dist/css/dx.light.css';
+import SpaceByOwner from "./pages/dashboard/spacesByOwner.jsx"
+import "./App.css"
 
-function App() {
+import router from 'routes';
+import ThemeCustomization from 'themes';
+
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="Spaces"></header>
-      <body>
-        <div>
-          <Navbar />
-          <h2>Bienvenue dans notre application de location d'espaces</h2>
-          <img src={monImage} alt="Description" style={{ width: '1530px', height: '500px' }}/>
-
-          <Bottombar />
-        </div>
-        
-      </body>
-    </div>
+    <ThemeCustomization>
+   <RouterProvider router={router} /> 
+     
+      <Router>
+        <Routes>
+          <Route path="/" Component={Home} />
+          <Route path="/home" Component={Home} />
+          <Route path="/accueil" Component={Accueil} />
+          <Route path="/connexion" Component={Connexion} />
+          <Route path="/inscription" Component={signup} />
+          <Route path="/contact" Component={Contact} />
+          <Route path="/apropos" Component={apropos} />
+          <Route path="/notifications" Component={Notifications} />
+          <Route path="/espaces" Component={SpaceByOwner} />
+          <Route path="/poster" element={<Poster />} />
+        </Routes>
+      </Router>
+    </ThemeCustomization>
   );
 }
-
-export default App;
