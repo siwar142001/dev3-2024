@@ -16,4 +16,10 @@ router.put(
   "/updateNotification/:id",
   controller_notification.mark_as_read
 );
+
+router.put(
+  "/updateNotificationToUnread/:id",
+  controller_notification.mark_as_unread
+);
+
 module.exports = router;

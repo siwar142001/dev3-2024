@@ -35,6 +35,22 @@ export default function Notification() {
       console.error(err.message);
     }
   };
+  const markAsUnRead = async (id) => {
+    try {
+      const confirmation = window.confirm('Are you sure you want to mark this notification as unread?');
+      
+      if (confirmation) {
+        const response = await axios.put(`http://localhost:5000/notifications/updateNotificationToUnread/${id}`);
+      fetchData()
+      } else {
+        console.log('Deletion canceled');
+      }
+      
+
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
   return (
     <>
       <Grid container rowSpacing={4.5} columnSpacing={2.75}>
@@ -59,8 +75,8 @@ export default function Notification() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button onClick={() => markAsRead(el?._id)} size="small">
-                  Mark as Read
+                <Button onClick={() => el.read ? markAsUnRead(el?._id) :  markAsRead(el?._id)} size="small">
+                 {el.read ? "Mark as unRead" : "Mark as Read" } 
                 </Button>
               </CardActions>
             </Card>

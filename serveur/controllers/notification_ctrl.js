@@ -28,10 +28,25 @@ const mark_as_read = async (req, res) => {
   }
 };
 
+const mark_as_unread = async (req, res) => {
+  try {
+    const id = req.params.id;
+    await Notifications.findOneAndUpdate(
+      { _id: id },
+      {
+        read: false,
+      }
+    );
+    res.status(200).json({ msg: "Notification is readed" });
+  } catch (err) {
+    console.error(err.message);
+  }
+};
+
 const get_notifications_per_user = async (req, res) => {
   try {
-    console.log("req.user.id", req.user);
-    const unreadNotifications = await Notifications.find({});
+  
+    const unreadNotifications = await Notifications.find({}).sort({ read: 1 });
 
     res.status(200).json(unreadNotifications);
   } catch (err) {
@@ -60,5 +75,6 @@ module.exports = {
   get_notifications,
   mark_as_read,
   get_notifications_per_user,
-  post_notifications
+  post_notifications,
+  mark_as_unread
 };
