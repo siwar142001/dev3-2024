@@ -2,18 +2,20 @@ import React from 'react';
 import './bottombar.css';
 function BottomNavbar() {
   return (
-    <nav className="bottom-navbar">
-      <ul className="navbar-nav">
+      <nav className="navbar1 navbar-expand-lg ">
+        <div className="container-fluid">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <a className="nav-link1 active" aria-current="page" href="/contact">Contact</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link1" href="/apropos">A propos</a>
+            </li>
 
-        <li className="nav-item">
-          <a href="Apropos" className="nav-link">A propos</a>
-        </li>
-        <li className="nav-item">
-          <a href="Contact" className="nav-link">Contact</a>
-        </li>
-        
-      </ul>
-    </nav>
+
+          </ul>
+        </div>
+      </nav>
   );
 }
 

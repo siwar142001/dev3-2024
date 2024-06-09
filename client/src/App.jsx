@@ -1,31 +1,39 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import monImage from './bg.jpg'; 
-import './components/navbar.css';
 import Navbar from './components/navbar';
 import Bottombar from './components/bottonmbar';
 import Accueil from './pages/Accueil';
-import Apropos from './pages/about';
 import Contact from './pages/contact';
 import Connexion from './pages/connexion';
+import Poster from './pages/poster';
 import Home from './pages/home';
+import apropos from './pages/apropos'
+import Reserver from "./pages/reserver";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="Spaces"></header>
-      <body>
-        <div>
-          <Navbar />
-          <h2>Bienvenue dans notre application de location d'espaces</h2>
-          <img src={monImage} alt="Description" style={{ width: '1530px', height: '500px' }}/>
+    const handleSubmit = (data) => {
+        console.log('Données soumises :', data);
+    };
+    return (
+        <div className="App">
+            <Navbar />
+            <Router>
+                <Routes>
+                    <Route path='/home' Component={Home}/>
+                    <Route path='/accueil' Component={Accueil}/>
+                    <Route path='/connexion' Component={Connexion}/>
+                    <Route path='/contact' Component={Contact}/>
+                    <Route path='/apropos' Component={apropos}/>
+                    <Route path='/poster' element={<Poster onSubmit={handleSubmit} />} />
+                    <Route path='/reserver' Component={Reserver} />
+                </Routes>
+            </Router>
+            <Bottombar />
 
-          <Bottombar />
+
+
         </div>
-        
-      </body>
-    </div>
-  );
+    );
 }
 
 export default App;

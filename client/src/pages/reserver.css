@@ -1,0 +1,9 @@
+#containerReservation{
+    display: flex;
+    justify-content: space-between
+}
+
+#boutonReservation{
+    display: flex;
+    justify-content: space-between
+}
